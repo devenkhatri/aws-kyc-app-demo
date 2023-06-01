@@ -1,0 +1,18 @@
+[
+    {
+        "name":"lookRight",
+        "description":"Please turn your face to your right"
+    },
+    {
+        "name":"lookLeft",
+        "description":"Please turn your face to your left"
+    },
+    {
+        "name":"smile",
+        "description":"Please smile !!!"
+    },    
+    {
+        "name":"mouthOpen",
+        "description":"Please open your mouth :)"
+    }
+]

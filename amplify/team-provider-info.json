@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kycapp-dev-90058-authRole",
+      "UnauthRoleArn": "arn:aws:iam::746397884673:role/amplify-kycapp-dev-90058-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::746397884673:role/amplify-kycapp-dev-90058-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-kycapp-dev-90058-deployment",
+      "UnauthRoleName": "amplify-kycapp-dev-90058-unauthRole",
+      "StackName": "amplify-kycapp-dev-90058",
+      "StackId": "arn:aws:cloudformation:us-east-1:746397884673:stack/amplify-kycapp-dev-90058/d573f1e0-fba3-11ed-9b44-0a2086b8b4d1",
+      "AmplifyAppId": "d32sikgr6978qj"
+    },
+    "categories": {
+      "auth": {
+        "kycapp350059b3": {}
+      },
+      "predictions": {
+        "faceId": {},
+        "textID": {},
+        "textInterpret": {}
+      }
+    }
+  }
+}
