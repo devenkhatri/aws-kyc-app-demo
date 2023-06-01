@@ -5,10 +5,11 @@ import gest_data from './gestures.json'
 import Card from "react-bootstrap/Card"
 import ProgressBar from "react-bootstrap/ProgressBar"
 import _ from 'lodash'
-import Jimp from "jimp";
 import { Auth, Logger } from "aws-amplify";
 import AWS from 'aws-sdk'
 import awsConfig from "../aws-exports"
+import 'jimp';
+const { Jimp } = window;
 
 const logger = new Logger('kyc', 'INFO');
 AWS.config.update({ region: awsConfig.aws_cognito_region });
@@ -128,7 +129,6 @@ const Liveliness = ({ setTabStatus, setLiveTestDetails }) => {
         return { result: false, message: "Unkown gesture type specified" }
     }
 
-
     const requestGesture = async () => {
 
 
@@ -169,16 +169,15 @@ const Liveliness = ({ setTabStatus, setLiveTestDetails }) => {
                     logger.info("****** faceDetectResponse", faceDetectResponse)
                     logger.info(imageBounds)
                     // crop the face and store the image
-                    setLiveImage(base64Image)
-                    // Jimp.read(imageBuffer, (err, image) => {
-                    //     if (err) throw err;
-                    //     else {
-                    //         image.crop(image.bitmap.width * imageBounds.Left - 15, image.bitmap.height * imageBounds.Top - 15, image.bitmap.width * imageBounds.Width + 30, image.bitmap.height * imageBounds.Height + 30)
-                    //             .getBase64(Jimp.MIME_JPEG, function (err, base64Image) {
-                    //                 setLiveImage(base64Image)
-                    //             })
-                    //     }
-                    // })
+                    Jimp.read(imageBuffer, (err, image) => {
+                        if (err) throw err;
+                        else {
+                            image.crop(image.bitmap.width * imageBounds.Left - 15, image.bitmap.height * imageBounds.Top - 15, image.bitmap.width * imageBounds.Width + 30, image.bitmap.height * imageBounds.Height + 30)
+                                .getBase64(Jimp.MIME_JPEG, function (err, base64Image) {
+                                    setLiveImage(base64Image)
+                                })
+                        }
+                    })
 
                     // update gesture state
                     setAlertMessage(validationResult.message)
