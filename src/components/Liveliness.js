@@ -219,21 +219,20 @@ const Liveliness = ({ setTabStatus, setLiveTestDetails }) => {
 
                 <Card.Body>
                     {showSpinner && <div className="spinner" ></div>}
-                    {showWebcam && <div className="video-padding">
+                    {showProgress && <div className="live-progressbar"><ProgressBar now={progressValue} label={`${progressValue}%`} /></div>}
+                    {showWebcam && <div>
                         <Webcam
                             audio={false}
-                            height={450}
                             ref={webcamRef}
                             screenshotFormat="image/jpeg"
-                            width={800}
+                            width={'100%'}
                             videoConst
                             raints={videoConstraints}
                         />
-
                     </div>
                     }
 
-                    {showProgress && <div className="live-progressbar"><ProgressBar now={progressValue} label={`${progressValue}%`} /></div>}
+                    
 
                 </Card.Body>
             </Card>

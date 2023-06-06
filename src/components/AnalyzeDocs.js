@@ -269,13 +269,14 @@ export default ({ setTabStatus, documentDetails, setDocumentDetails }) => {
 
                 <Card.Body>
                     {showSpinner && <div className="spinner" ></div>}
-                    {showWebcam && <div className="video-padding">
+                    {progressValue !== 0 && showProgress && <div className="live-progressbar"><ProgressBar key={progressValue} now={progressValue} label={`${progressValue}%`} /></div>}
+                    {showWebcam && <div>
                         <Webcam
                             audio={false}
-                            height={450}
+                            // height={450}
                             ref={webcamRef}
                             screenshotFormat="image/jpeg"
-                            width={800}
+                            width={'100%'}
                             videoConst
                             raints={videoConstraints}
                         />
@@ -283,7 +284,7 @@ export default ({ setTabStatus, documentDetails, setDocumentDetails }) => {
                     </div>
                     }
 
-                    {progressValue !== 0 && showProgress && <div className="live-progressbar"><ProgressBar key={progressValue} now={progressValue} label={`${progressValue}%`} /></div>}
+                    
 
                 </Card.Body>
             </Card>

@@ -41,14 +41,17 @@ const KYCContainer = () => {
             <Container>
                 <Row>
                     <Col>
-                        <Navbar bg="dark" variant="dark">
+                        <Navbar expand="lg" bg="dark" variant="dark">
                             <Navbar.Brand href="#"><h2 className="app-title">Video KYC</h2></Navbar.Brand>
-                            <span className="logout">
-                                <Navbar.Text>{user.username}</Navbar.Text>
-                                <Button style={{ marginLeft: '1rem' }} onClick={signOut}>
-                                    SignOut
-                                </Button>
-                            </span>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+                                <span className="logout">
+                                    <Navbar.Brand>{user.username}</Navbar.Brand>
+                                    <Button onClick={signOut}>
+                                        SignOut
+                                    </Button>
+                                </span>
+                            </Navbar.Collapse>
                         </Navbar>
                     </Col>
                 </Row>
@@ -57,8 +60,8 @@ const KYCContainer = () => {
                     <Col>
                         <Tabs defaultActiveKey={currentTabKey} activeKey={currentTabKey} id="uncontrolled-tab-example" onSelect={onSelectTab}>
                             <Tab eventKey="welcome" title="Welcome">
-                                <h2 className="tab-element-align">Welcome to video KYC</h2>
-                                <div className="tab-element-align">
+                                <h2>Welcome to video KYC</h2>
+                                <div>
                                     <p>The KYC process consists of 3 simple steps. </p>
                                     <ul>
                                         <li>Liveliness Detection - The user will do a series of face gestures to determine whether its a live feed</li>
@@ -66,7 +69,7 @@ const KYCContainer = () => {
                                         <li>Validation and summary</li>
                                     </ul>
                                 </div>
-                                <p className="tab-button-align">
+                                <p>
                                     <Button variant="primary" onClick={startKyc}>Start</Button>
                                 </p>
                             </Tab>
