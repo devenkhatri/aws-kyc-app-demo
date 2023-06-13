@@ -1,3 +1,8 @@
+# Part of AWS Workshop
+[Self Service KYC App Workshop with Amplify and Amazon AI Services](https://catalog.us-east-1.prod.workshops.aws/workshops/2b414187-7e55-4729-a998-c698d9429876/en-US)
+
+# [Live Demo](https://main.d32sikgr6978qj.amplifyapp.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
